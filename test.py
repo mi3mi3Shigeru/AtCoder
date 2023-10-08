@@ -1,28 +1,18 @@
-n,m= map(int, input().split())
-s=input()
-t=input()
-is_prefix=False
-is_suffix=False
-answer=3
+n,x= map(int, input().split())
+a = list(map(int,input().split()))
 
-if str(s) in str(t[0:n]):
-    is_prefix=True
+max_score=int(max(a))
+min_score=int(min(a))
+total=sum(a)
 
-if str(s) in str(t[m-n:m]):
-    is_suffix=True
+total-=(max_score+min_score)
+answer=int(x-total)
 
+#ここの=をつけ忘れてました。泣きそうです。
+if min_score>=answer:
+    answer=0
 
-
-    
-if is_prefix:
-    if is_suffix:
-        answer=0
-    else:
-        answer=1
-else:
-    if is_suffix:
-        answer=2
-    else:
-        answer=3
+if answer>max_score:
+    answer=-1
 
 print(str(answer))

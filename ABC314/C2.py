@@ -4,12 +4,10 @@ c=list(map(int, input().split()))
 
 s=[char for char in S]
 
-a=[]
 a=[[] for _ in range(m)]
 for i in range(n):
     a[c[i]-1].append(i)
 
-print(a)
 ans=s.copy()
 for b in a:
     for i in range(len(b)-1,0,-1):
